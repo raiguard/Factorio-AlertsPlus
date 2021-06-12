@@ -1,0 +1,23 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "factoriomod",
+      "request": "launch",
+      "name": "Debug",
+      "factorioPath": "/home/rai/dev/factorio/1/bin/x64/factorio",
+      "hookMode": "debug",
+      "hookControl": ["AlertsPlus", "Sandbox"],
+      // TODO: Add a special testing scenario
+      "factorioArgs": ["--load-scenario", "EditorExtensions/testing"]
+    },
+    {
+      "type": "factoriomod",
+      "request": "launch",
+      "name": "Profile",
+      "factorioPath": "/home/rai/dev/factorio/1/bin/x64/factorio",
+      "hookMode": "profile",
+      "hookControl": ["AlertsPlus", "Sandbox"]
+    }
+  ]
+}

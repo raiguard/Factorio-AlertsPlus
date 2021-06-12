@@ -1,0 +1,55 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "factorio",
+      "label": "Set minimal mods",
+      "command": "adjustMods",
+      "modsPath": "/home/rai/dev/factorio/linked/mods",
+      "adjustMods": {
+        "AlertsPlus": true,
+        "EditorExtensions": true,
+        "flib": true,
+        "Sandbox": true
+      },
+      "disableExtraMods": true
+    },
+    {
+      "type": "factorio",
+      "label": "Set mods - Krastorio2",
+      "command": "adjustMods",
+      "modsPath": "/home/rai/dev/factorio/linked/mods",
+      "adjustMods": {
+        "AlertsPlus": true,
+        "EditorExtensions": true,
+        "flib": true,
+        "Krastorio2": true,
+        "Sandbox": true
+      },
+      "disableExtraMods": true
+    },
+    {
+      "type": "factorio",
+      "label": "Set mods - SE",
+      "command": "adjustMods",
+      "modsPath": "/home/rai/dev/factorio/1/mods",
+      "adjustMods": {
+        "aai-industry": true,
+        "aai-signal-transmission": true,
+        "AlertsPlus": true,
+        "alien-biomes": true,
+        "EditorExtensions": true,
+        "flib": true,
+        "informatron": true,
+        "jetpack": true,
+        "robot_attrition": true,
+        "Sandbox": true,
+        "space-exploration-graphics": true,
+        "space-exploration-hr-graphics": true,
+        "space-exploration-postprocess": true,
+        "space-exploration": true
+      },
+      "disableExtraMods": true
+    }
+  ]
+}
