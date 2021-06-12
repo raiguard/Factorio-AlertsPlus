@@ -11,12 +11,17 @@ function dash_gui.build(player, player_table)
       name = "foobar",
       direction = "vertical",
       style_mods = {margin = 0, padding = 0, vertical_spacing = 0},
-      ref = {"window"},
+      ref = {"window", "container"},
       {
         type = "empty-widget",
         style = "flib_vertical_pusher",
       },
-      {type = "frame", style_mods = {width = constants.dash_gui_width, height = 50}}
+      {
+        type = "frame",
+        style_mods = {width = constants.dash_gui_width, minimal_height = 50},
+        direction = "vertical",
+        ref = {"window", "frame"}
+      }
     }
   })
 
@@ -29,7 +34,7 @@ function dash_gui.build(player, player_table)
 end
 
 function dash_gui.destroy(player_table)
-  player_table.guis.dash.refs.window.destroy()
+  player_table.guis.dash.refs.window.container.destroy()
   player_table.guis.dash = nil
 end
 
@@ -37,14 +42,14 @@ end
 function dash_gui.reposition(player, player_table)
   local gui_data = player_table.guis.dash
 
-  local window = gui_data.refs.window
+  local container = gui_data.refs.window.container
 
   -- FIXME: This makes it impossible to click everything behind the flow... ugh
-  window.location = {
+  container.location = {
     x = player.display_resolution.width - (constants.dash_gui_width * player.display_scale),
     y = 0
   }
-  window.style.height = player.display_resolution.height / player.display_scale
+  container.style.height = player.display_resolution.height / player.display_scale
 end
 
 return dash_gui
