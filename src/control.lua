@@ -4,6 +4,7 @@ local event = require("__flib__.event")
 -- local gui = require("__flib__.gui-beta")
 local migration = require("__flib__.migration")
 
+local dash_gui = require("scripts.gui.dash")
 local global_data = require("scripts.global-data")
 local migrations = require("scripts.migrations")
 local player_data = require("scripts.player-data")
@@ -41,6 +42,12 @@ event.register(
     defines.events.on_player_display_scale_changed,
   },
   function(e)
-    -- TODO:
+    local player = game.get_player(e.player_index)
+    local player_table = global.players[e.player_index]
+
+    -- TODO: Handle nonexistent GUI when translations are a thing
+    if player_table then
+      dash_gui.reposition(player, player_table)
+    end
   end
 )
