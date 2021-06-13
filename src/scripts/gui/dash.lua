@@ -22,7 +22,12 @@ function dash_gui.build(player, player_table)
         direction = "vertical",
         ref = {"window", "frame"},
         {type = "frame", style = "inside_shallow_frame",
-          {type = "empty-widget", style_mods = {height = 70, horizontally_stretchable = true}}
+          {
+            type = "scroll-pane",
+            style = "flib_naked_scroll_pane",
+            style_mods = {horizontally_stretchable = true, minimal_height = 50, maximal_height = 200},
+            ref = {"list_pane"}
+          },
         },
         {type = "flow", style_mods = {horizontal_spacing = 8},
           {type = "frame", style = "inside_shallow_frame",

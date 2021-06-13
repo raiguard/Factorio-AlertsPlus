@@ -28,15 +28,16 @@ function player_data.update_game_alerts(player, player_table)
   if not gui_data then return end
 
   local refs = gui_data.refs
-  local window = refs.window.frame
-  window.clear()
+  local pane = refs.list_pane
+  pane.clear()
 
-  local player_alerts = player_table.alerts
+  -- local player_alerts = player_table.alerts
+  -- local compiled_alerts = {}
   for surface_index, alerts in pairs(player.get_alerts{}) do
-    window.add{type = "label", style = "caption_label", caption = game.surfaces[surface_index].name}
+    -- window.add{type = "label", style = "caption_label", caption = game.surfaces[surface_index].name}
     for alert_type, alerts in pairs(alerts) do
       for _, alert_data in pairs(alerts) do
-        window.add{
+        pane.add{
           type = "label",
           caption = reverse_defines.alert_type[alert_type]
             .." "
