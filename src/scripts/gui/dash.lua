@@ -8,7 +8,6 @@ function dash_gui.build(player, player_table)
   local refs = gui.build(player.gui.screen, {
     {
       type = "flow",
-      name = "foobar",
       direction = "vertical",
       style_mods = {margin = 0, padding = 0, vertical_spacing = 0},
       ref = {"window", "container"},
@@ -18,9 +17,18 @@ function dash_gui.build(player, player_table)
       },
       {
         type = "frame",
+        style = "ap_dash_frame",
         style_mods = {width = constants.dash_gui_width, minimal_height = 50},
         direction = "vertical",
-        ref = {"window", "frame"}
+        ref = {"window", "frame"},
+        {type = "frame", style = "inside_shallow_frame",
+          {type = "empty-widget", style_mods = {height = 70, horizontally_stretchable = true}}
+        },
+        {type = "flow", style_mods = {horizontal_spacing = 8},
+          {type = "frame", style = "inside_shallow_frame",
+            {type = "button", style_mods = {horizontally_stretchable = true}, caption = "Expand"}
+          }
+        }
       }
     }
   })
