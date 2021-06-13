@@ -52,7 +52,7 @@ event.register(
   end
 )
 
-event.on_nth_tick(10, function(e)
+event.on_nth_tick(60, function(e)
   for player_index, player in pairs(game.players) do
     player_data.update_game_alerts(player, global.players[player_index])
   end
